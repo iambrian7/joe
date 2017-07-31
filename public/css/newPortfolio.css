@@ -1,0 +1,48 @@
+ .portfolio-container { display: flex; background: rgba(0, 0, 255, 0.08);;
+        flex-direction: column;
+    justify-content: space-between;}
+/*.product-categories {flex: 0 0 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+            flex-wrap: wrap;
+            }
+    .story-item {
+      height: 150px;
+      border: 1px solid red;
+      flex: 1 1 250px;
+      background: #aaa;
+      color: white;
+      margin: 10px;
+      max-width: 200px;
+      min-width: 150px;
+    }*/
+    .product-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.story-item {
+  flex: 1 1 250px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 5px;
+}
+.category-title {
+  border: 1px solid red;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 4em;
+}
+.story-item img { max-width: 100%; height: auto; display: block; margin: 0 auto;}
+    .category-title {
+      margin: 5px auto;
+      border: 1px solid goldenrod;
+      padding: 10px;
+      background: pink;
+    }
+    .portfolio-row {
+        display: flex;
+        flex-direction: column;
+
+    }

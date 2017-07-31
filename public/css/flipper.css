@@ -1,0 +1,300 @@
+html, body { margin: 0; height: 100%; }
+body { background-color: bisque; }
+body.hide-overflow { overflow: hidden; }
+/* helpers */
+.t {display: table; width: 100%; height: 100%; }
+.tc {display: table-cell; vertical-align: middle; text-align: center; }
+.rel { position: relative; }
+/* book */
+.book { margin: 0 auto; width: 100%; height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*added for shadow around page*/
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 -3px 3px rgba(0,0,0,0.1);
+    border: solid #ccc 1px;
+    border-radius: 10px;
+}
+.book .page { height: 100%; }
+.book .page img { max-width: 100%; height: 100%; }
+
+
+
+/*body{*/
+/*overflow:hidden;*/
+/*}*/
+
+/*.flipbook{*/
+/*width:400px;*/
+/*height:300px;*/
+/*margin-top: 10px;*/
+/*margin-bottom: 10px;*/
+/*}*/
+
+/*.flipbook .page{*/
+/*width:400px;*/
+/*height:300px;*/
+/*background-color:white;*/
+/*line-height:300px;*/
+/*font-size:20px;*/
+/*text-align:center;*/
+/*}*/
+
+.flipbook .page-wrapper{
+    -webkit-perspective:2000px;
+    -ms-perspective:2000px;
+    -o-perspective:2000px;
+    perspective:2000px;
+}
+
+.flipbook .hard{
+    background:#ccc !important;
+    color:#333;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+    font-weight:bold;
+}
+
+.flipbook .odd{
+    background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+    background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+
+}
+
+.flipbook .even{
+    background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+    background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    /*box-shadow:inset 10px 0 5px #666;*/
+    box-shadow:inset 10px 0 5px #f00;
+}
+.hilite {
+    background-color: yellow;
+}
+.flip-container {
+    margin: auto;
+    /*margin-right: 15px;*/
+    /*margin-left: 15px;*/
+    max-width : 900px;
+    /*border: 2px green solid;*/
+    box-shadow: 13px 10px 5px -3px rgba(0,0,0,0.75);
+}
+.cover-color {
+    background: goldenrod;
+}
+.flipbook .even{
+    background-image:url(pics/gradient-page-left.jpg);
+    background-position:right top;
+    background-repeat:repeat-y;
+}
+
+.flipbook .odd{
+    background-image:url(pics/gradient-page-right.jpg);
+    background-position:left top;
+    background-repeat:repeat-y;
+}
+.flipbook .even .gradient{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:-webkit-gradient(linear, left top, right top, color-stop(0.95, rgba(0,0,0,0)), color-stop(1, rgba(0,0,0,0.2)));
+    background-image:-webkit-linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
+    background-image:linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
+}
+
+.flipbook .odd .gradient{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:-webkit-gradient(linear, right top, left top, color-stop(0.95, rgba(0,0,0,0)), color-stop(1, rgba(0,0,0,0.15)));
+    background-image:-webkit-linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
+    background-image:linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
+}
+.box {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 -3px 3px rgba(0,0,0,0.1);
+    border: solid #ccc 1px;
+    border-radius: 10px;
+    margin: 50px 0 0 50px;
+}
+    .xanadu-header-title{
+        display: flex;
+        line-height: 20px;
+        margin: 0;
+        font-weight: 900;
+    }
+.xanadu-inc-1 {
+    color: darkorange;
+    font-family: sans-serif;
+
+}
+.xanadu-shadow {
+    text-shadow: 4px 4px 2px rgba(47, 44, 44, 1);
+}
+.xanadu-shadow-white {
+    text-shadow: 4px 4px 2px rgba(255, 255, 42554, 1);
+}
+.xanadu-shadow-small {
+    text-shadow: 2px 2px 2px rgba(47, 44, 44, 1);
+}
+.xanadu-inc-2 {
+    color: #43FF43;!important;
+    font-family: sans-serif;;
+
+}
+.xanadu-about {
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.xanadu-about-item:nth-child(1) > img {
+    margin: 20px;
+    width: 80%;
+}
+.xanadu-beta {
+    border: 1px solid red;
+}
+.pdf-controls {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-right: 20px;
+    padding: 20px;
+
+}
+.right-button {
+    float: right;
+}
+.book-control {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    margin: 10px 10px;
+}
+.book-control-item {
+
+}
+.book-control-item:nth-child(1) {
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+    margin: auto;
+    text-align: center;
+    color: wheat;
+}
+.book-control-item:nth-child(2) {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    font-size: 1em;
+    background: darkorange;
+    color: black;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+.book-control-item:nth-child(2):hover {
+    background: #f23cfc;
+    text-decoration: none;
+}
+.book-title {
+    margin-bottom: 15px;
+    font-size: 36px;
+    font-weight: 600;
+}
+.portfolio-book {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/bluegrid.jpg) no-repeat bottom center;
+}
+.container.xanadu {
+    margin: 0;
+    padding: 0;
+
+}
+#animatedModal {
+    background: url(../img/bluegrid.jpg) no-repeat bottom center;
+}
+#flip-list {
+    background-color: transparent;
+}
+.btn-close-modal {
+    color: #EF0808;
+    border-radius: 5px;
+}
+.hide {
+    display: none;
+}
+.template-close {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-right: 20px;
+    /*padding: 20px;*/
+}
+.checkout-button-container {
+    float: right;;
+}
+.spacer2 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+}
+.btn.xanadu-top-button {
+    height: 34px;
+}
+.spacer3 {
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+}
+.page-numbers > p {
+    align-self: center;
+    padding: 0 20px;
+    color: white;
+    font-size: 20px;
+
+}
+#book-caption {
+    color: white;
+
+}

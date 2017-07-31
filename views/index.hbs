@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="Zanadu Books offers children's stories templates for personaliztion. Intended for mothers, fathers, grand-fathers and grand-mothers to share personal about them and their families. ">
+
+<meta name="author" content="Joseph Beach">
+  <!--<link rel="icon" href="/favicon.ico" type="image/x-icon">-->
+  <link rel="icon" href="img/ZanaduLogo.png">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Stylesheet
+    ================================================== -->
+  <link rel="stylesheet" type="text/css"  href="css/style.css"> 
+  <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css"  href="css/flipper.css">
+  <link rel="stylesheet" href="css/joestripe.css">
+
+  <style>
+    #btn-close-modal {
+      width:100%;
+      text-align: center;
+      cursor:pointer;
+      color:#fff;
+    }
+    .joes-product-detail { color: white;
+      padding: 10px;}
+      .joes-item {
+        margin: 30px;
+        padding: 20px;
+      }
+  </style>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js" type="text/javascript"></script>
+
+  <script src="js/turn.js"></script>
+  <script src="js/flipper.js"></script>
+
+  
+</head>
+<body>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+<!--DEMO01-->
+<div id="animatedModal">
+  <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+  <div  id="btn-close-modal" class="close-animatedModal template-close">
+    <button class="btn btn-primary xanadu-top-button">Back</button>
+    <div class="spacer3"><h1 id="book-caption" class="xanadu-shadow"></h1></div>
+  </div>
+
+  <div class="modal-content">
+    <!--Your modal content goes here-->
+    <div id="flip-list">
+    </div><!--end flip-list-->
+    <div class="pdf-controls">
+      <div class="spacer2"></div>
+      <button class="btn btn-info btn-sm" id="prev">Prev</button>
+      <div class="page-numbers ">
+       <p> <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span></p>
+      </div>
+      <button class="btn btn-info btn-sm" id="next">Next</button>
+      <div class="spacer2"></div>
+    </div>
+  </div>
+</div>
+<!-- Navigation
+    ==========================================-->
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container xanadu">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="index.html">
+        <p><span class="xanadu-inc-1 xanadu-shadow">Writings</span> <span class="xanadu-inc-2 xanadu-shadow"> by Joe</span></p>
+        </a>
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home" class="page-scroll">Home</a></li>
+        <li><a href="#about-section" class="page-scroll">About</a></li>
+        <!--<li><a href="#services-section" class="page-scroll">Services</a></li>-->
+        <li><a href="#works-section" class="page-scroll">Templates</a></li>
+        <li><a href="#team-section" class="page-scroll">Team</a></li>
+        <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li>
+        <li><a href="#contact-section" class="page-scroll">Contact</a></li>
+       <li style="float: right; cursor: pointer;" id="cart-button"  data-toggle="modal" data-target="#joes-cart-modal">
+         {{!-- <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span> --}}
+         <span class="my-cart-icon"> <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-notify my-cart-badge"></span></span>
+        
+       </li>
+
+        <li class="hide"><a id="demo01" href="#animatedModal" >DEMO01</a></li>
+
+      </ul>
+      
+    </div>
+    
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+<!-- Header -->
+<header class="text-center" name="home">
+  <div class="intro-text">
+    <img src="img/Children-Reading-3.png" alt="">
+   
+    <h1 class="wow zoomIn">Welcome to  </h1><h1><span class="xanadu-inc-1 xanadu-shadow">Writings</span> <span class="xanadu-inc-2 xanadu-shadow"> by Joe</span></h1>
+    <p class="wow fadeInDown" data-wow-delay="600ms">Providing children’s story book templates for photo and information personalization</p>
+    <div class="clearfix"></div>
+    <a href="#works-section" class="btn btn-default btn-lg page-scroll wow fadeInDown" data-wow-delay="1000ms">Check Out Our Templates</a>
+    <a href="books/Instructionpicture.docx" id="my-download" class="hide" download="XanaduInstructionTemplate.docx"></a>
+{{!-- <div class="container">
+  <h2>Carousel Example</h2>  
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:30%; margin: auto;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="http://lorempixel.com/output/animals-q-c-640-480-10.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="http://lorempixel.com/output/animals-q-c-640-480-6.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="http://lorempixel.com/output/nature-q-c-640-480-4.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div> --}}
+  
+  </div>
+</header>
+<!-- About Section -->
+<div id="about-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title text-center center wow fadeInDown">
+        <h2>About us</h2>
+        <li>
+        <hr>
+      </div>
+      <div class="row wow fadeInDown" data-wow-delay="200ms">
+        <div class="xanadu-about">
+          <div class="xanadu-about-item">
+            <img src="img/about-us.jpg" width="100%">
+          </div>
+            <div class="about-text">
+              <h3><span class="color">Who</span> we are</h3>
+              <p>We are a group of enthusiastic people who want to encourage creativity and love to families throughout the world.</p>
+              <h3><span class="color">What</span> we do</h3>
+
+              <p>We create story templates intended to help encourage children to read more by attract interest in seeing yourselves as others see you.</p>
+              <h3><span class="color">Our</span> philosophy</h3>
+              <p>Loving relationships is the core of life. Personalizing your own children or grand-children will foster relationships and bring more love into the world.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Portfolio Section -->
+
+<div id="works-section">
+  <div class="container"> <!-- Container -->
+    <div class="section-title text-center wow fadeInDown">
+      <h2>Our Portfolio</h2>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="categories wow fadeInDown">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".child">Story Templates for Children</a></li>
+            <li><a href="#" data-filter=".cards">Greeting Cards</a></li>
+            <li><a href="#" data-filter=".adults">Story Templates for Adults</a></li>
+            <li><a href="#" data-filter=".xmas">Christmas</a></li>
+            <li><a href="#" data-filter=".novels">Short Stories/Novels</a></li>
+            <li><a href="#" data-filter=".branding">Observations</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="portfolio-container">
+        <div class="portfolio-items"></div>
+      </div>
+  </div>
+</div>
+</div>
+<!-- Team Section -->
+<div id="team-section" class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h2>Meet our Team</h2>
+      <hr>
+      <div class="clearfix"></div>
+      <div class="space"></div>
+    </div>
+    <div id="row" class="wow fadeInDown" data-wow-delay="200ms">
+      <div class="col-md-6 col-sm-6 team">
+        <div class="thumbnail"> <img src="img/team/joe.jpg" alt="..." class="team-img">
+          <div class="caption">
+            <h3>Joe Beach</h3>
+            <p>CEO / Founder</p>
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 team">
+        <div class="thumbnail"> <img src="img/team/brian.jpg" alt="..." class="team-img">
+          <div class="caption">
+            <h3>Brian Carlson</h3>
+            <p>Web Designer / Founder</p>
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Testimonials Section -->
+<div id="testimonials-section" class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h2>Comments from out Template Users</h2>
+      <h4>“We invite your thoughts and  comments. Maybe we can improve the world a little.”</h4>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 wow fadeInDown" data-wow-delay="200ms">
+        <div id="testimonial" class="owl-carousel owl-theme">
+          <div class="item"> <img src="img/clients/grandchildrenPhoto400.jpg" alt=""/>
+            <h3>My Children and Grandchildren loved the first three customized stories.
+            </h3>
+
+          </div>
+          <div class="item"> <img src="img/clients/TessLeeRocco.jpg" alt=""/>
+            <h1><strong>We would love to create a template for Rocco, our one year old.</strong></h1>
+            <p><strong>Lee and Tess</strong>,  Parents of Rocco Valentine.</p>
+          </div>
+          <div class="item"> <img src="img/clients/RoccoCantWait.jpg" alt=""/>
+            <h1>I can't wait until I can read.</h1>
+            <p><strong>Rocco Valentine</strong>, King for now.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact-section">
+  <div class="container">
+    <div class="section-title text-center wow fadeInDown">
+      <h2>Contact us</h2>
+      <div class="xanadu-beta">
+        <p>We are currently developing this system. It has not been fully implemented and will have some bugs left
+      to be worked out. We would greatly appreciate any feedback and/or issues you may find. If you have any questions
+       for us and if your email address is a real email address we will try to get back to you.</p>
+
+      <p>   thanks, <img src="img/heart60px.png" alt=""> </p>
+      <p>Joe and Brian</p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-4 wow fadeInDown" data-wow-delay="200ms">
+      <h3>Contact Info</h3>
+      <div class="space"></div>
+      <h4> <span class="xanadu-inc-1 xanadu-shadow-small">Xanadu</span> <span class="xanadu-inc-2 xanadu-shadow-small"> Inc</span> </h4>
+      <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>11348 Stratton Ave S<br>
+        Eden Prairie, MN  55344</p>
+      <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>Xanaducorporte@gmail.com</p>
+
+      <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>(952) 240-6710</p>
+    </div>
+    <div class="col-md-8 wow fadeInDown" data-wow-delay="200ms">
+      <h3>Leave us a message</h3>
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Send Message</button>
+      </form>
+      <div class="alert alert-success alert-dismissable fade">
+        <a href="#"  id="contact-message" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Thank You!</strong> We love hearing from you.
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer" class="text-center">
+  <div class="container">
+    <p class="bem-disclaimer__copyright">© Zanadu, Inc. All rights&nbsp;reserved.</p>
+  </div>
+</div>
+<form class="modal multi-step" id="joes-cart-modal" reset_on_close>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-center step-1" data-step="1">Cart</h2>
+                <h2 class="modal-title text-center step-2" data-step="2">Checkout</h2>
+                <h2 class="modal-title text-center step-3" data-step="3">Thanks for shopping</h2>
+            </div>
+            <div class="modal-body step-1" data-step="1">
+                <div id="cart-items">
+                    <table class="table" id="cart-items-table">
+                        <thead><tr><th>Product</th><th>Quanity</th><th>Price</th><th>Totals</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                    <div class="cart-totals"></div>
+                </div>
+
+            </div>
+            <div class="modal-body step-2" data-step="2">
+                 <div class="joes-hidden-checkout">
+                    <div class="items-summary">
+                       <h3> <div class="cart-totals-summary"></div></h3>
+                    </div>
+                    <div class="card-row">
+                        <span class="visa"></span>
+                        <span class="mastercard"></span>
+                        <span class="amex"></span>
+                        <span class="discover"></span>
+                    </div>
+                    <div id="result" class='alert alert-danger'></div>
+                    <div class="form-group">
+                        <label class="sr-only" for="card_name">Name</label>
+                        <input type="text" class="form-control" id="card_name" placeholder="Name" required="required" >
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="card_card">Card Number</label>
+                        <input type="text" class="form-control" id="card_card" placeholder="Card Number" required="required" >
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="card_date">Expiration month/date</label>
+                        <input type="text" class="form-control" id="card_date" placeholder="Expires (mm/yy)" required="required" >
+                    </div>    
+                    <div class="form-group">
+                        <label class="sr-only" for="card_cvc">CVC</label>
+                        <input type="text" class="form-control" id="card_cvc" placeholder="CVC" required="required" >
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="card_zip">Zip code</label>
+                        <input type="text" class="form-control" id="card_zip" placeholder="Zip code" required="required" >
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body step-3" data-step="3">
+               <h1> Complete. Thank You</h1>
+               <div id="downloads">
+                   <div class="download-item">
+                      <h3>Your purchases can be downloaded here:  </h3>
+                   </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary step step-1" data-step="1" onclick="sendEvent('#joes-cart-modal', 2)">Checkout</button>
+                <button type="button" class="btn btn-primary step step-2" data-step="2" onclick="sendEvent('#joes-cart-modal', 1)">Edit Cart</button>
+                <button type="button" class="btn btn-primary step step-2" data-step="2" onclick="sendEvent('#joes-cart-modal', 3)">Submit Purchase</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="https://js.stripe.com/v2/"></script>
+
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+
+<script type="text/javascript" src="js/waypoints.js"></script> 
+{{!-- <script type="text/javascript" src="js/jquery.isotope.js"></script>  --}}
+<script type="text/javascript" src="//npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script> 
+
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+
+
+<script src="js/animatedModal.js"></script>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+    <script type="text/javascript">
+        Stripe.setPublishableKey('pk_test_UWB3Uz5xAWTWkF0BznCORJgb');
+    </script>
+
+<script src="js/validatejoecheckout.js"></script>
+
+<script src="js/multi-step-modal.js"></script>
+<script src="js/joestripe.js"></script>
+<!-- Javascripts
+    ================================================== -->
+<script src="js/zanadu.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

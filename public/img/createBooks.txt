@@ -1,0 +1,16 @@
+ImageMagic
+convert '*.jpg' -resize 120x120 thumbnail%03d.png
+
+convert medicaltemp.pdf +adjoin page-%d.jpg
+convert *.jpg -resize 500x650 %d.png
+// rename files
+for /R %i in (*.jpg) DO convert %i -thumbnail 30% %~di%~pi%~ni_small%~xi
+// rename all file to 0.jpg, 1.jpg, etc...(single letter names starting with 0
+ convert *.jpg %d.jpg
+Ghostscript...............
+gswin64c.exe -dNOPAUSE -sDEVICE=jpeg -r144 -sOutputFile=p%03d.jpg easterbook.pdf
+
+//////////////////////////////////////
+
+books/book-name/*.jpg  // all jpg pics are pages in book
+img/porfolio/book-name-preview.jpg // cover page sized to 600x400
